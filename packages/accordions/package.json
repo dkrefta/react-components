@@ -22,8 +22,10 @@
   "sideEffects": false,
   "types": "dist/typings/index.d.ts",
   "dependencies": {
-    "@zendeskgarden/container-utilities": "^0.5.1",
-    "polished": "^3.4.4"
+    "@zendeskgarden/container-utilities": "^0.5.3",
+    "@zendeskgarden/container-accordion": "^0.5.4",
+    "polished": "^3.4.4",
+    "react-uid": "^2.2.0"
   },
   "peerDependencies": {
     "@zendeskgarden/react-theming": "^8.1.0",
