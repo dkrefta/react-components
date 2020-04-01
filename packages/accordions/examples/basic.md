@@ -287,147 +287,20 @@ const UncontrolledExample = () => {
         <Col>
           <Accordion level={3} isCollapsible={isCollapsible} isExpandable={isExpandable}>
             <Accordion.Section>
-              <Accordion.Header>Turnip greens yarrow</Accordion.Header>
-              <Accordion.Panel>
-                <div>
-                  Turnip greens yarrow ricebean rutabaga endive cauliflower sea lettuce kohlrabi
-                  amaranth water spinach avocado daikon napa cabbage asparagus winter purslane kale.
-                  Celery potato scallion desert raisin horseradish spinach carrot soko.
-                </div>
-                <div>
-                  Lotus root water spinach fennel kombu maize bamboo shoot green bean swiss chard
-                  seakale pumpkin onion chickpea gram corn pea. Brussels sprout coriander water
-                  chestnut gourd swiss chard wakame kohlrabi beetroot carrot watercress.
-                </div>
-              </Accordion.Panel>
-            </Accordion.Section>
-            <Accordion.Section>
-              <Accordion.Header>Corn amaranth salsify</Accordion.Header>
-              <Accordion.Panel>
-                <div>
-                  Corn amaranth salsify bunya nuts nori azuki bean chickweed potato bell pepper
-                  artichoke. Nori grape silver beet broccoli kombu beet greens fava bean potato
-                  quandong celery.
-                </div>
-                <div>
-                  Bunya nuts black-eyed pea prairie turnip leek lentil turnip greens parsnip. Sea
-                  lettuce lettuce water chestnut eggplant winter purslane fennel azuki bean earthnut
-                  pea sierra leone bologi leek soko chicory celtuce parsley jícama.
-                </div>
-              </Accordion.Panel>
-            </Accordion.Section>
-            <Accordion.Section>
-              <Accordion.Header>Celery quandong swiss</Accordion.Header>
-              <Accordion.Panel>
-                <div>
-                  Celery quandong swiss chard chicory earthnut pea potato. Salsify taro catsear
-                  garlic gram celery bitterleaf wattle seed collard greens nori. Grape wattle seed
-                  kombu beetroot horseradish carrot squash brussels sprout chard.
-                </div>
-                <div>
-                  Pea horseradish azuki bean lettuce avocado asparagus okra. Kohlrabi radish okra
-                  azuki bean corn fava bean mustard tigernut jícama green bean celtuce collard
-                  greens avocado quandong fennel gumbo black-eyed pea.
-                </div>
-              </Accordion.Panel>
-            </Accordion.Section>
-            <Accordion.Section>
-              <Accordion.Header>Grape silver beet</Accordion.Header>
-              <Accordion.Panel>
-                <div>
-                  Grape silver beet watercress potato tigernut corn groundnut. Chickweed okra winter
-                  purslane coriander yarrow sweet pepper radish garlic brussels sprout pea groundnut
-                  summer purslane earthnut pea tomato spring onion azuki bean gourd.
-                </div>
-                <div>
-                  Gumbo kakadu plum komatsuna black-eyed pea green bean zucchini gourd winter
-                  purslane silver beet rock melon radish asparagus spinach.
-                </div>
-              </Accordion.Panel>
-            </Accordion.Section>
-            <Accordion.Section>
-              <Accordion.Header>Soko radicchio bunya</Accordion.Header>
-              <Accordion.Panel>
-                <div>
-                  Soko radicchio bunya nuts gram dulse silver beet parsnip napa cabbage lotus root
-                  sea lettuce brussels sprout cabbage. Catsear cauliflower garbanzo yarrow salsify
-                  chicory garlic bell pepper napa cabbage lettuce tomato kale arugula melon sierra
-                  leone bologi rutabaga tigernut.
-                </div>
-                <div>
-                  Sea lettuce gumbo grape kale kombu cauliflower salsify kohlrabi okra sea lettuce
-                  broccoli celery lotus root carrot winter purslane turnip greens garlic. Jícama
-                  garlic courgette coriander radicchio plantain scallion cauliflower fava bean
-                  desert raisin spring onion chicory bunya nuts. Sea lettuce water spinach gram fava
-                  bean leek dandelion silver beet eggplant bush.
-                </div>
-              </Accordion.Panel>
-            </Accordion.Section>
-          </Accordion>
-        </Col>
-      </Row>
-    </Grid>
-  );
-};
-
-<UncontrolledExample />;
-```
-
-#### Controlled usage
-
-```jsx
-const { Well } = require('@zendeskgarden/react-notifications/src');
-const { Toggle, Field, Label, Range } = require('@zendeskgarden/react-forms/src');
-
-const UncontrolledExample = () => {
-  const [controlledSections, setControlledSections] = React.useState([0]);
-  const [expandAll, setExpandAll] = React.useState(false);
-
-  React.useEffect(() => {
-    if (expandAll) {
-      setControlledSections([0, 1, 2, 3, 4]);
-    } else {
-      setControlledSections([]);
-    }
-  }, [expandAll]);
-
-  return (
-    <Grid>
-      <Well isRecessed>
-        <Row>
-          <Col>
-            <Field className="u-mt">
-              <Toggle checked={expandAll} onChange={event => setExpandAll(!expandAll)}>
-                <Label>Expand All</Label>
-              </Toggle>
-            </Field>
-          </Col>
-          <Col>
-            <Field className="u-mt">
-              <Label>
-                Active Panel {controlledSections.length ? `${controlledSections[0] + 1}` : ''}
-              </Label>
-              <Range
-                value={controlledSections.length === 1 ? controlledSections[0] : 0}
-                max={4}
-                onChange={event => {
-                  const nextActiveIndex = parseInt(event.target.value, 10);
-                  setControlledSections([nextActiveIndex]);
-                }}
-              />
-            </Field>
-          </Col>
-        </Row>
-      </Well>
-      <Row className="u-mt" style={{ background: 'gray' }}>
-        <Col>
-          <Accordion
-            level={3}
-            expandedSections={controlledSections}
-            onChange={index => setControlledSections([index])}
-          >
-            <Accordion.Section>
-              <Accordion.Header>Turnip greens yarrow</Accordion.Header>
+              <Accordion.Header
+              // groupButton={
+              //   <button
+              //     onClick={e => {
+              //       e.preventDefault();
+              //       console.log('nooo');
+              //     }}
+              //   >
+              //     Menu button
+              //   </button>
+              // }
+              >
+                Turnip greens yarrow
+              </Accordion.Header>
               <Accordion.Panel>
                 <div>
                   Turnip greens yarrow ricebean rutabaga endive cauliflower sea lettuce kohlrabi

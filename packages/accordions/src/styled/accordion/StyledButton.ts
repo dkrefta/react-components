@@ -26,6 +26,8 @@ export const StyledButton = styled.button.attrs<IStyledButton>({
   border: 1px solid transparent;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
+  display: flex;
+  justify-content: space-between;
 
   ${props => retrieveComponentStyles(COMPONENT_ID, props)};
 `;

@@ -8,7 +8,7 @@
 import { createContext, useContext, HTMLAttributes } from 'react';
 
 export interface IAccordionContext {
-  expandedSections: number | number[];
+  expandedSections: number[];
   getHeaderProps: <T>(options?: T) => T & HTMLAttributes<HTMLDivElement>;
   getTriggerProps: <T>(options?: T) => T & HTMLAttributes<HTMLDivElement>;
   getPanelProps: <T>(options?: T) => T & HTMLAttributes<HTMLDivElement>;

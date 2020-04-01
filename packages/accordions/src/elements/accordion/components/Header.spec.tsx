@@ -11,7 +11,7 @@ import { Accordion } from '../Accordion';
 
 describe('Header', () => {
   it('passes ref to underlying DOM element', () => {
-    const ref = React.createRef<HTMLDivElement>();
+    const ref = React.createRef<HTMLButtonElement>();
 
     const { getByRole } = render(
       <Accordion level={3}>

@@ -20,6 +20,8 @@ export const StyledHeader = styled.div.attrs<IStyledHeader>({
 })<IStyledHeader>`
   font-size: 14px;
 
+  display: flex;
+
   ${props => retrieveComponentStyles(COMPONENT_ID, props)};
 `;
 

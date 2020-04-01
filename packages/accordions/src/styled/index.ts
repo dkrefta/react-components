@@ -19,3 +19,4 @@ export * from './accordion/StyledSection';
 export * from './accordion/StyledHeader';
 export * from './accordion/StyledButton';
 export * from './accordion/StyledPanel';
+export * from './accordion/StyledChevron';

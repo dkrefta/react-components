@@ -11,17 +11,25 @@ import { retrieveComponentStyles, DEFAULT_THEME } from '@zendeskgarden/react-the
 const COMPONENT_ID = 'accordions.panel';
 
 export interface IStyledPanel {
-  isHidden?: boolean;
+  isExpanded?: boolean;
 }
-
+// padding: ${props => (props.isExpanded ? 8 : 0)}px 40px ${props => (props.isExpanded ? 32 : 0)}px
+// 40px;
+// display: ${props => props.isExpanded && 'none'};
 export const StyledPanel = styled.div.attrs<IStyledPanel>({
   'data-garden-id': COMPONENT_ID,
   'data-garden-version': PACKAGE_VERSION
 })<IStyledPanel>`
-  display: ${props => props.isHidden && 'none'};
   background-color: white;
   margin-bottom: 20px;
   padding: 8px 40px 32px 40px;
+  background: orange;
+  transition: height 0.25s ease-in-out, visibility 0.25s ease-in-out;
+  overflow: hidden;
+  visibility: ${props => !props.isExpanded && 'hidden'};
+  height: ${props => {
+    return !props.isExpanded && '0 !important'; /* stylelint-disable-line */
+  }};
 
   ${props => retrieveComponentStyles(COMPONENT_ID, props)};
 `;
