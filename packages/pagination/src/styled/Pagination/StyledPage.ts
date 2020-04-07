@@ -17,6 +17,7 @@ import {
 const COMPONENT_ID = 'pagination.page';
 
 const colorStyles = (props: ThemeProps<DefaultTheme>) => {
+  const defaultColor = getColor('neutralHue', 600, props.theme);
   const hoverForegroundColor = getColor('neutralHue', 700, props.theme);
   const hoverBackgroundColor = getColor('primaryHue', 600, props.theme, 0.08);
   const boxShadowColor = getColor('primaryHue', 600, props.theme, 0.35);
@@ -28,6 +29,8 @@ const colorStyles = (props: ThemeProps<DefaultTheme>) => {
   const currentActiveBackgroundColor = getColor('primaryHue', 600, props.theme, 0.28);
 
   return css`
+    color: ${defaultColor};
+
     &:hover {
       background-color: ${hoverBackgroundColor};
       color: ${hoverForegroundColor};
@@ -91,7 +94,7 @@ export const StyledPage = styled.li.attrs({
   visibility: ${props => props.hidden && 'hidden'};
   margin-left: ${props => `${props.theme.space.base}px`};
   border-radius: ${props => props.theme.borderRadii.md};
-  cursor: pointer;
+  cursor: ${props => !(props as any).disabled && 'pointer'};
   overflow: hidden;
   text-align: center;
   text-overflow: ellipsis;
@@ -111,7 +114,7 @@ export const StyledPage = styled.li.attrs({
     font-weight: ${props => props.theme.fontWeights.semibold};
   }
 
-  ${props => colorStyles(props)};
+  ${props => !(props as any).disabled && colorStyles(props)};
 
   &${props => (props.theme.rtl ? ':last-of-type' : ':first-of-type')} {
     margin-left: 0;
